@@ -1,4 +1,4 @@
-//Hello
+//Hello 
 #iostream
 using namespaces std;
 
@@ -6,6 +6,7 @@ using namespaces std;
 
 int main()
 {
-
+/*int num=0;*/
+  
 
 }
