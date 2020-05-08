@@ -26,6 +26,7 @@ int main() {
 	eliminarUltimo(listaPtr);
 	agregarUltimo(listaPtr, empleado);
 	agregarPrimero(listaPtr, empleado);
+	eliminarTodos(listaPtr);
 
 	return 0;
 }
