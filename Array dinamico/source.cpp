@@ -6,7 +6,7 @@ using namespace std;
 
 int main() {
 	tListaPtr listaPtr;
-	tEmpleado empleado;
+	
 	//srand(time(NULL));
 
 	listaPtr.punt = new tEmpleado[N]; //Ahora es cuando pasa a ser un array dinamico
@@ -16,26 +16,24 @@ int main() {
 		if (listaPtr.contador == listaPtr.capacidad) { 
 			ampliar(listaPtr);
 		}
-		empleado.estudio = num_to_estudio(rand() % 6);
-		empleado.contratacion = num_to_contratacion(rand() % 3);
-		listaPtr.punt[i] = empleado;
+		listaPtr.punt[i].estudio = num_to_estudio(rand() % 6);
+		listaPtr.punt[i].contratacion = num_to_contratacion(rand() % 3);
 		listaPtr.contador++;
 	}
 
-
-	agregarUltimo(listaPtr, empleado);
-	agregarPrimero(listaPtr, empleado);
+	agregarUltimo(listaPtr);
+	agregarPrimero(listaPtr);
 	eliminarUltimo(listaPtr);
-	eliminarUltimo(listaPtr);
+	eliminarPrimero(listaPtr);
 
 	eliminarTodos(listaPtr);
 	return 0;
 }
 
 
-void agregarUltimo(tListaPtr& listaPtr, tEmpleado empleado) {
+void agregarUltimo(tListaPtr& listaPtr) {
 	int num;
-
+	tEmpleado empleado;
 	if (listaPtr.contador == listaPtr.capacidad) {
 		ampliar(listaPtr);
 	}
@@ -53,9 +51,9 @@ void agregarUltimo(tListaPtr& listaPtr, tEmpleado empleado) {
 	listaPtr.contador++;
 }
 
-void agregarPrimero(tListaPtr& listaPtr, tEmpleado empleado) {
+void agregarPrimero(tListaPtr& listaPtr) {
 	int num;
-
+	tEmpleado empleado;
 	if (listaPtr.contador == listaPtr.capacidad) {
 		ampliar(listaPtr);
 	}
