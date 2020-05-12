@@ -93,6 +93,7 @@ void eliminarPrimero(tListaPtr& listaPtr) {
 
 void eliminarTodos(tListaPtr& listaPtr) {
 	delete[] listaPtr.punt;
+	listaPtr.punt = nullptr; //Mejor que apunte a nullptr, a que apunte a saber donde
 	listaPtr.contador = 0;
 }
 
